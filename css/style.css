@@ -238,7 +238,7 @@ body {
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
 .hero {
-    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/homepage-hero.jpg');
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('../images/homepage-hero.jpg');
     background-size: cover;
     background-position: center;
     height: 50vh;
@@ -253,7 +253,7 @@ body {
 /* MK Specific Hero */
 .mk-hero {
     /* Updated to use local castle image */
-    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/cinderella-castle.jpg'); 
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('../images/cinderella-castle.jpg'); 
     background-size: cover;
     background-position: center;
     height: 40vh;
@@ -262,7 +262,7 @@ body {
 /* Epcot Specific Hero */
 .epcot-hero {
     /* Updated to use local castle image */
-    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/epcot-hero.jpg'); 
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('../images/epcot-hero.jpg'); 
     background-size: cover;
     background-position: center;
     height: 40vh;
@@ -271,7 +271,7 @@ body {
 /* AK Specific Hero */
 .ak-hero {
     /* Updated to use local castle image */
-    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/ak-hero.jpg'); 
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('../images/ak-hero.jpg'); 
     background-size: cover;
     background-position: center;
     height: 40vh;
@@ -280,7 +280,7 @@ body {
 /* HS Specific Hero */
 .hs-hero {
     /* You will need a picture of the Tower of Terror or Chinese Theatre */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hs-hero.jpg'); 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/hs-hero.jpg'); 
     background-size: cover;
     background-position: center;
     height: 40vh;
@@ -288,7 +288,7 @@ body {
 
 /* Springs Specific Hero */
 .springs-hero {
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/springs-hero.jpg'); 
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/springs-hero.jpg'); 
         background-size: cover;
         background-position: center;
         height: 40vh;
@@ -700,4 +700,5 @@ footer p { font-size: 0.9rem; opacity: 0.8; letter-spacing: 0.5px; }
 }
 
 .role-text h4 { color: var(--primary-blue); margin-bottom: 3px; }
+
 .role-text p { font-size: 0.9rem; color: #666; }
