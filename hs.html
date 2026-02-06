@@ -20,7 +20,13 @@
             --card-hover: #922B21;    /* Darker Velvet Red for hovers */
             --accent-gold: #F5B041;   /* "Marquee Light" Gold */
         }
-        
+        .hs-hero {
+            /* You will need a picture of the Tower of Terror or Chinese Theatre */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hs-hero.jpg'); 
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+        }
         /* Make the badges look like "Admit One" tickets */
         .badge {
             background: #FDFEFE; /* White ticket */
@@ -40,7 +46,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="/images/pinpointlogo.png" alt="The Pin Point Logo">
+                <img src="images/pinpointlogo.png" alt="The Pin Point Logo">
             </a>
             
             <button class="menu-toggle" aria-label="Toggle Navigation">
@@ -308,4 +314,5 @@
 
     <script src="/java/scripts.js"></script>
 </body>
+
 </html>
