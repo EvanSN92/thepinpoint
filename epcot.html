@@ -19,7 +19,13 @@
         --card-hover: #41545d;    /* Lighter silver-blue for hovers */
         --accent-gold: #00B0FF;   /* Replaces the gold with "Future World" Electric Blue */
     }
-
+    .epcot-hero {
+        /* Updated to use local castle image */
+        background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('images/epcot-hero.jpg'); 
+        background-size: cover;
+        background-position: center;
+        height: 40vh;
+    }
     /* Optional: Tweak the status bar badges to match */
     .badge.gold {
         background: var(--accent-gold);
@@ -36,7 +42,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="/images/pinpointlogo.png" alt="The Pin Point Logo">
+                <img src="images/pinpointlogo.png" alt="The Pin Point Logo">
             </a>
             
             <button class="menu-toggle" aria-label="Toggle Navigation">
@@ -319,4 +325,5 @@
 
     <script src="/java/scripts.js"></script>
 </body>
+
 </html>
