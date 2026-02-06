@@ -1,0 +1,703 @@
+/* --- Google Fonts Import (Backup) --- */
+/* (Ideally, keep the <link> in your HTML for speed, but this works too) */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700&display=swap');
+
+:root {
+    --primary-blue: #003060; /* Enamel Blue */
+    --accent-gold: #FFD700;   /* Lanyard Gold */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --card-hover: #004080;
+}
+
+/* --- NIGHT MODE STYLES --- */
+
+/* The Toggle Button Style */
+.theme-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+.theme-btn:hover {
+    background: rgba(255,255,255,0.2);
+    color: var(--accent-gold);
+}
+
+/* Dark Mode Overrides */
+body.dark-mode {
+    background-color: #121212;
+    background-image: radial-gradient(#333 1px, transparent 1px); /* Darker dots */
+    color: #e0e0e0;
+}
+
+/* Make white cards dark */
+body.dark-mode .card,
+body.dark-mode .land-group, 
+body.dark-mode .location-list li,
+body.dark-mode .rule-card,
+body.dark-mode .gear-card,
+body.dark-mode .role-item,
+body.dark-mode .checklist-card,
+body.dark-mode .chat-section,
+body.dark-mode .list-column {
+    background-color: #1E1E1E;
+    color: #f0f0f0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4); /* Stronger shadow for depth */
+}
+
+/* Adjust text inside cards */
+body.dark-mode .location-list strong,
+body.dark-mode h2, 
+body.dark-mode h3, 
+body.dark-mode h4 {
+    color: var(--accent-gold); /* Gold pops better on black than Blue does */
+}
+
+body.dark-mode .location-list p,
+body.dark-mode .card p,
+body.dark-mode .gear-info p {
+    color: #aaa; /* Softer grey text */
+}
+
+/* Navbar stays dark, but dropdowns need help */
+body.dark-mode .dropdown-menu {
+    background-color: #2C2C2C;
+    border: 1px solid #444;
+}
+body.dark-mode .dropdown-menu li a {
+    color: #e0e0e0;
+    border-bottom: 1px solid #444;
+}
+body.dark-mode .dropdown-menu li a:hover {
+    background-color: #333;
+    color: var(--accent-gold);
+}
+
+/* --- 1. General Typography & Reset --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    /* Apply the soft, rounded 'Nunito' font to all general text */
+    font-family: 'Nunito', sans-serif; 
+}
+
+/* Apply the chunky 'Lilita One' font to all Headings & Logo */
+h1, h2, h3, h4, .logo {
+    font-family: 'Lilita One', cursive;
+    letter-spacing: 1px;
+    font-weight: 400; /* Lilita is naturally bold */
+}
+
+/* Heading Sizes */
+h1 { font-size: 3.5rem; text-shadow: 2px 2px 0px rgba(0,0,0,0.2); }
+h2 { font-size: 2.2rem; }
+h3 { font-size: 1.5rem; }
+
+/* Body Styling with "Pin Board" Texture */
+body { 
+    background-color: #f4f4f9;
+    background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+    background-size: 20px 20px; /* Spacing of the dots */
+    color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Sticky footer requirement */
+}
+
+/* --- 2. Buttons & Badges (Enamel Look) --- */
+.btn, .btn-primary, .badge, .tag {
+    /* The Enamel Shine */
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #FFC107 100%);
+    box-shadow: 
+        inset 2px 2px 2px rgba(255,255,255,0.4), /* Highlight top-left */
+        inset -2px -2px 2px rgba(0,0,0,0.1),    /* Shadow bottom-right */
+        0 4px 6px rgba(0,0,0,0.2);              /* Drop shadow */
+    border: 1px solid #e0a800;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-family: 'Lilita One', cursive; /* Matches headers */
+}
+
+/* Tags specific overrides */
+.tag {
+    color: white; /* Tags usually have white text */
+    background: #FF4500; /* Default Orange */
+    text-shadow: none; /* Remove shadow for small text clarity */
+    border: none;
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-left: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tag.blue { background: #1E90FF; }
+
+/* Active State (Pressing Down) */
+.btn:active, .btn-primary:active {
+    transform: translateY(2px);
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.badge {
+    background: #e0e0e0;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: none; /* Flatter look for status badges */
+    border: 1px solid #ccc;
+    text-shadow: none;
+}
+.badge.gold { 
+    background: var(--accent-gold); 
+    color: var(--primary-blue); 
+    border-color: #e0a800;
+}
+
+/* --- 3. Navbar & Logo --- */
+.navbar {
+    background-color: var(--primary-blue);
+    padding: 0.8rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+    border: 2px solid var(--accent-gold);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a { 
+    color: white; 
+    font-weight: 700; /* Bolder for Nunito */
+    font-size: 1rem; 
+    text-decoration: none;
+}
+.nav-links a:hover { color: var(--accent-gold); transition: 0.3s; }
+
+/* Dropdowns */
+.dropdown { position: relative; }
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none;
+    border-radius: 4px;
+    flex-direction: column;
+}
+
+.dropdown-menu li a {
+    color: var(--text-dark);
+    padding: 12px 15px;
+    display: block;
+    border-bottom: 1px solid #eee;
+    font-weight: 400;
+}
+.dropdown-menu li a:hover { background: #f0f0f0; color: var(--primary-blue); }
+.dropdown:hover .dropdown-menu { display: flex; }
+
+.menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+/* --- 4. Hero & Utility --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+.hero {
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/homepage-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+.hero h1 { margin-bottom: 10px; }
+
+/* MK Specific Hero */
+.mk-hero {
+    /* Updated to use local castle image */
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/cinderella-castle.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+/* Epcot Specific Hero */
+.epcot-hero {
+    /* Updated to use local castle image */
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/epcot-hero.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+/* AK Specific Hero */
+.ak-hero {
+    /* Updated to use local castle image */
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/ak-hero.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+/* HS Specific Hero */
+.hs-hero {
+    /* You will need a picture of the Tower of Terror or Chinese Theatre */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/hs-hero.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+/* Springs Specific Hero */
+.springs-hero {
+        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/images/springs-hero.jpg'); 
+        background-size: cover;
+        background-position: center;
+        height: 40vh;
+}
+
+/* --- 5. Park Selector (Home) --- */
+.park-select { padding: 4rem 0; }
+.park-select h2 { text-align: center; margin-bottom: 2rem; color: var(--primary-blue); }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+.card h3 { color: var(--primary-blue); margin-bottom: 5px; }
+.card p { color: #777; font-size: 0.9rem; font-weight: 700; }
+.card:hover { border-color: var(--accent-gold); transform: translateY(-5px); }
+
+/* --- 6. Content Cards (Locations) --- */
+.land-group {
+    background: transparent; 
+    box-shadow: none;
+    border-left: none;
+    padding: 10px 0;
+}
+
+.land-group h3 { 
+    margin-bottom: 15px; 
+    color: var(--primary-blue); 
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    text-decoration: none; /* Removed underline in favor of border-bottom */
+}
+
+.location-list { list-style: none; }
+
+.location-list li {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 6px solid var(--primary-blue);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.location-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+.location-list li::after {
+    content: '\f08d'; /* FontAwesome Pin Icon */
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #ddd;
+    font-size: 1.2rem;
+    transform: rotate(45deg);
+}
+
+.location-list strong { 
+    display: block; 
+    font-size: 1.2rem; /* Slightly larger for Nunito */
+    font-family: 'Lilita One', cursive; /* Make location names chunky */
+    color: var(--primary-blue);
+    letter-spacing: 0.5px;
+}
+
+.location-list p { 
+    font-size: 0.95rem; 
+    color: #555; 
+    margin-top: 5px; 
+    line-height: 1.4;
+}
+
+/* --- 7. Map & Tips --- */
+.status-bar { display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap; }
+
+.map-container { margin: 30px 0; text-align: center; }
+.map-container h2 { color: var(--primary-blue); margin-bottom: 15px; text-align: left; }
+
+.map-wrapper {
+    position: relative;
+    border: 4px solid white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.park-map-img { width: 100%; height: auto; display: block; cursor: zoom-in; }
+.caption { background: #f4f4f4; color: #666; font-size: 0.85rem; padding: 8px; border-top: 1px solid #ddd; }
+
+.cast-tips { margin: 40px 0; }
+.cast-tips h2 { margin-bottom: 20px; color: var(--primary-blue); }
+
+.tip-box {
+    background: #fff8e1;
+    border: 1px solid var(--accent-gold);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+.tip-box h4 { margin-bottom: 5px; color: #b38b00; }
+
+/* --- 8. Footer --- */
+footer {
+    background-color: var(--primary-blue);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    margin-top: auto;
+    border-top: 4px solid var(--accent-gold);
+}
+footer p { font-size: 0.9rem; opacity: 0.8; letter-spacing: 0.5px; }
+
+/* --- 9. Mobile Responsive --- */
+@media (max-width: 768px) {
+    .menu-toggle { display: block; }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px; /* Matches logo height */
+        left: 0;
+        width: 100%;
+        background: var(--primary-blue);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+    .nav-links.active { display: flex; }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        background: rgba(255,255,255,0.1);
+        width: 100%;
+    }
+    .dropdown-menu li a { color: white; border: none; padding-left: 30px; }
+    
+    /* Disable hover on mobile */
+    .dropdown:hover .dropdown-menu { display: none; } 
+    .dropdown-menu.active { display: flex; }
+}
+
+/* --- Trader Talk / Chat Section --- */
+.chat-section {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 40px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--primary-blue); /* Matches Park Color */
+}
+
+.chat-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.chat-header h2 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+.chat-status {
+    display: inline-block;
+    background: #f1f1f1;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* The pulsing "Live" red dot */
+.live-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #ff3b30;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(255, 59, 48, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+}
+
+/* The actual box holding the iframe */
+.chat-embed-container {
+    border: 2px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fafafa;
+}
+
+.chat-disclaimer {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 10px;
+}
+
+/* --- Safety & Etiquette Page Styles --- */
+
+/* Hero Image */
+.safety-hero {
+    /* Use a picture of a lanyard or a friendly handshake/trade */
+    background: linear-gradient(rgba(0,48,96,0.7), rgba(0,48,96,0.7)), url('/images/safety-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+/* Rule Cards (The Grid at the top) */
+.rule-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--accent-gold);
+    transition: transform 0.2s;
+}
+
+.rule-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-header {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.rule-card h3 {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+/* Do's and Don'ts Split Container */
+.etiquette-section { margin: 40px 0; }
+
+.dos-donts-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.list-column {
+    flex: 1;
+    min-width: 300px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.list-column h3 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.list-column ul { list-style: none; }
+.list-column li { margin-bottom: 15px; padding-left: 5px; }
+.list-column strong { display: block; font-size: 1.1rem; margin-bottom: 2px; }
+
+/* "Do" Specifics (Green) */
+.list-column.do { border-left: 6px solid #2ecc71; }
+.list-column.do h3 { color: #2ecc71; }
+
+/* "Don't" Specifics (Red) */
+.list-column.dont { border-left: 6px solid #e74c3c; }
+.list-column.dont h3 { color: #e74c3c; }
+
+/* Scrapper Warning Box */
+.scrapper-warning {
+    background: #fff3cd;
+    border: 2px solid #ffeeba;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 40px;
+    color: #856404;
+}
+
+.scrapper-warning h2 { color: #856404; margin-bottom: 10px; }
+
+.scrapper-tips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.scrapper-tips span {
+    background: rgba(255,255,255,0.6);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* --- Cast Member Guide Styles --- */
+
+/* Hero Image */
+.cast-hero {
+    /* Placeholder: A picture of a Cast Member Lanyard */
+    background: linear-gradient(rgba(0,48,96,0.6), rgba(0,48,96,0.6)), url('/images/cast-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+}
+
+/* Gear Grid (Lanyard vs Hip Pack) */
+.gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.gear-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    align-items: center; /* Aligns icon and text vertically */
+    gap: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+.gear-card:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-3px);
+}
+
+.gear-icon {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    background: #f4f4f9;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents icon from squishing on small screens */
+}
+
+.gear-info h3 { margin-bottom: 5px; font-size: 1.4rem; }
+.gear-info p { font-size: 0.95rem; margin-top: 5px; color: #555; }
+
+/* Role List */
+.role-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.role-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-left: 5px solid var(--accent-gold);
+}
+
+.role-badge {
+    background: var(--primary-blue);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.role-text h4 { color: var(--primary-blue); margin-bottom: 3px; }
+.role-text p { font-size: 0.9rem; color: #666; }

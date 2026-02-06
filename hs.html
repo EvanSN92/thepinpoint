@@ -1,0 +1,311 @@
+<!--Make sure to change the color theme in <head> to make park, change hero class name to refect and add hero-img in the css-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hollywood Studio | The Pin Point</title>
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Hollywood Studios Theme: "Red Carpet" & Art Deco */
+            --primary-blue: #A93226;  /* Deep Cinema Red (Replaces the Blue) */
+            --card-hover: #922B21;    /* Darker Velvet Red for hovers */
+            --accent-gold: #F5B041;   /* "Marquee Light" Gold */
+        }
+        
+        /* Make the badges look like "Admit One" tickets */
+        .badge {
+            background: #FDFEFE; /* White ticket */
+            color: #A93226;      /* Red text */
+            border: 1px dashed #A93226; /* Dashed border like a tear-off ticket */
+        }
+        
+        .badge.gold {
+            background: var(--accent-gold);
+            color: #fff;
+            border: 1px solid #D4AC0D;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/images/pinpointlogo.png" alt="The Pin Point Logo">
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle Navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" class="drop-trigger">Disney World <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="mk.html">Magic Kingdom</a></li>
+                        <li><a href="epcot.html">EPCOT</a></li>
+                        <li><a href="hs.html">Hollywood Studios</a></li>
+                        <li><a href="ak.html">Animal Kingdom</a></li>
+                        <li><a href="springs.html">Disney Springs</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a href="#" class="drop-trigger">Disneyland <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="dlp.html">Disneyland Park</a></li>
+                        <li><a href="dca.html">DCA</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="cast-guide.html">Cast Member Guide</a></li>
+                <li><a href="safety.html">Safety & Etiquette</a></li>
+                <li><button id="theme-toggle" class="theme-btn"><i class="fas fa-moon"></i></button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero hs-hero">
+        <div class="hero-content">
+            <h1>Lights, Camera, Trade.</h1>
+            <p>From the pin board at Sid Cahuenga’s to the hidden spots in Galaxy's Edge.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <div class="status-bar">
+            <span class="badge"><i class="fas fa-map-marker-alt"></i> 12+ Active Boards</span>
+            <span class="badge gold"><i class="fas fa-user-friends"></i> High Trader Activity</span>
+        </div>
+
+        <section class="map-container">
+            <h2><i class="fas fa-map"></i> Pin Board Map</h2>
+            <h2 style="font-size: medium;">Please Remember Check Every Refreshment Cart and Guest Relations!!</h2>
+            <div class="map-wrapper">
+                <a href="images/" target="_blank">
+                    <img src="images/" alt=" Pin Board Map" class="park-map-img">
+                </a>
+                <p class="caption"><i class="fas fa-search-plus"></i> Tap map to view full size</p>
+            </div>
+        </section>
+
+        <section class="park-section">
+            <h2><i class="fas fa-compass"></i> Board Locations by Land</h2>
+            
+            <div class="land-group">
+                <h3>Hollywood Boulevard</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong> 
+                        <!-- <span class="tag">Primary Hub</span>
+                        <p></p>-->
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="land-group">
+                <h3>Echo Lake</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="land-group">
+                <h3>Commissary Lane</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="land-group">
+                <h3>Grand Avenue</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+             <div class="land-group">
+                <h3>Galaxy's Edge</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="land-group">
+                <h3>Toy Story Land</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="land-group">
+                <h3>Pixar Plaza</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="land-group">
+                <h3>Animation Courtyard</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="land-group">
+                <h3>Sunset Boulecard</h3>
+                <ul class="location-list">
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                    <li>
+                        <strong></strong>
+                        <p></p>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="cast-tips">
+            <h2><i class="fas fa-search"></i> Where to Find Cast Traders</h2>
+            <div class="tip-box">
+                <h4><i class="fas fa-broom"></i> Custodial Cast Members</h4>
+                <p><strong>Location:</strong> The Hub (statue area) & Main Street.</p>
+                <p>Custodial CMs in Magic Kingdom are famous for having the best pins. Look for them sweeping near the Partners Statue.</p>
+            </div>
+            <div class="tip-box">
+                <h4><i class="fas fa-ticket-alt"></i> Entrance Greeters</h4>
+                <p><strong>Location:</strong> The tunnel entrance under the train station.</p>
+                <p>CMs standing at the turnstiles or just inside the tunnels often wear lanyards.</p>
+            </div>
+            <div class="tip-box">
+                <h4><i class="fas fa-ticket-alt"></i> Each Stated Location</h4>
+                <p><strong></strong> </p>
+                <p>CMs can be at each of these location just keep a eye out for landyards and pin pads!</p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 The Pin Point. Not affiliated with The Walt Disney Company.</p>
+    </footer>
+
+    <script src="/java/scripts.js"></script>
+</body>
+</html>
