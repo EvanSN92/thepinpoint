@@ -749,4 +749,67 @@ footer p { font-size: 0.9rem; opacity: 0.8; letter-spacing: 0.5px; }
 
 .role-text p { font-size: 0.9rem; color: #666; }
 
+/* --- Hidden Checklist Page Styles --- */
+
+/* Year Headers (2026 vs 2025) */
+.year-header {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.year-header h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 50px 0;
+}
+
+/* Reuse the Checklist Grid/Card styles we made earlier */
+/* (Ensure the .checklist-card styles from the Cast Guide are present in your CSS) */
+
+/* Dark Mode Tweaks for this page */
+body.dark-mode .year-header {
+    border-color: #444;
+}
+body.dark-mode .section-divider {
+    background: #444;
+}
+
+.term {
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+.term summary {
+    padding: 15px;
+    cursor: pointer;
+    background: #f9f9f9;
+    font-weight: bold;
+    color: var(--primary-blue);
+    list-style: none; /* Hides default triangle */
+}
+.term summary::after {
+    content: '+'; 
+    float: right;
+    font-weight: bold;
+}
+.term[open] summary::after { content: '-'; }
+.term p { padding: 15px; border-top: 1px solid #eee; color: #555; }
+
+
+
+
 
